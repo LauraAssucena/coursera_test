@@ -1,9 +1,91 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-	<title>Hello Coursera!</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🥳💖 Feliz cumple Julen 💖🥳</title>
+    <style>
+        body {
+            background-color: #3498db;
+            color: #fff;
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            padding: 5vw; /* Utilizar unidades relativas para el padding */
+            margin: 0;
+        }
+
+        #felicitacion {
+            font-size: 5vw; /* Utilizar unidades relativas para el tamaño del texto */
+            margin-bottom: 3vw; /* Utilizar unidades relativas para el espacio entre el texto y el botón */
+        }
+
+        #botonFelicitacion {
+            background-color: #ff00ff; /* Cambiar el color del botón a fucsia */
+            color: #fff;
+            padding: 3vw 5vw; /* Utilizar unidades relativas para el padding del botón */
+            font-size: 3vw; /* Utilizar unidades relativas para el tamaño del texto del botón */
+            cursor: pointer;
+            border: none;
+            border-radius: 1vw; /* Utilizar unidades relativas para la border-radius del botón */
+            margin-bottom: 5vw; /* Utilizar unidades relativas para el espacio entre el botón y las felicitaciones */
+        }
+
+        img {
+            max-width: 100%; /* Hacer la imagen responsive */
+            height: auto;
+            margin-top: 3vw;
+        }
+
+        #felicitacionAleatoria {
+            font-size: 2.5vw; /* Utilizar unidades relativas para el tamaño del texto de las felicitaciones aleatorias */
+        }
+
+        @media (max-width: 768px) {
+            /* Estilos específicos para pantallas pequeñas */
+            #felicitacion {
+                font-size: 6vw;
+            }
+
+            #botonFelicitacion {
+                font-size: 4vw;
+                padding: 4vw 6vw;
+            }
+
+            img {
+                width: 100%;
+                margin-top: 4vw;
+            }
+
+            #felicitacionAleatoria {
+                font-size: 3vw;
+            }
+        }
+    </style>
 </head>
 <body>
-<h1>Hello Coursera!</h1>
+
+<h1 id="felicitacion">🥳💖 ¡¡¡Feliz cumple Julen!!! 💖🥳</h1>
+
+<button id="botonFelicitacion" onclick="mostrarFelicitacion()">Things to remember in your 30's </button>
+
+<div id="felicitacionAleatoria"></div>
+
+<img src="https://i.imgur.com/pSptRdw.jpg" alt="Globos de cumpleaños">
+
+<script>
+    const felicitaciones = [
+        "And above all, watch with glittering eyes the whole world around you because the greatest secrets are always hidden in the most unlikely places.",
+        "A little magic can take you a long way",
+        "I've also learned that a real mouth-smile always has an eye-smile to go with it",
+        "It doesn't matter who you are or what you look like, so long as somebody loves you"
+    ];
+
+    function mostrarFelicitacion() {
+        const felicitacionAleatoria = document.getElementById('felicitacionAleatoria');
+        const randomIndex = Math.floor(Math.random() * felicitaciones.length);
+        felicitacionAleatoria.innerHTML = felicitaciones[randomIndex];
+    }
+</script>
+
 </body>
 </html>
